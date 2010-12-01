@@ -42,11 +42,11 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
 	echo $this->Html->css(array('handheld'),null,array('media'=>'handheld'));	
 	
 	//Example of how to use google webfonts - see webroot/css/custom.css
-	echo $this->Html->css('http://fonts.googleapis.com/css?family=Lobster',NULL,array('inline'=>true));
+	//echo $this->Html->css('http://fonts.googleapis.com/css?family=Lobster',NULL,array('inline'=>true));
   ?>
   
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-1.6.min.js"></script>
+  <?php echo $this->Html->script('libs/modernizr-1.6.min.js'); ?>
 
   
 </head>
