@@ -85,7 +85,7 @@ $this->Html->script(array('mylibs/mobile','mylibs/plugins','mylibs/commonscript'
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $this->Html->url('/js/libs/jquery-1.4.4.min.js'); ?>"%3E%3C/script%3E'))</script>
 
   <script src="js/mobile.js?v=1"></script>
 <?php

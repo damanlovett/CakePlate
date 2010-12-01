@@ -73,7 +73,7 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
  <!-- If you want to fallback, download jquery to your js dir -->
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $this->Html->url('/js/libs/jquery-1.4.4.min.js'); ?>"%3E%3C/script%3E'))</script>
   
   <!-- Optional: <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>-->  
   <!-- Optional: <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>-->
