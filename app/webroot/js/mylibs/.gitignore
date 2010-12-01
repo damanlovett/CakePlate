@@ -1,0 +1,5 @@
+!.gitignore
+
+# name your files different and change in layout.ctp (then you can compare diffs when updating yr clone)
+!commonscript.js
+!plugins.js
