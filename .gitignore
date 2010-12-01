@@ -9,6 +9,9 @@ app/tmp/
 *.o
 *.so
 
+# komodo project
+*.komodoproject
+
 .buildpath
 .project
 
