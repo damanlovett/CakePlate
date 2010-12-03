@@ -9,9 +9,6 @@
 class AppController extends Controller {
 
 	var $helpers = array('Html', 'Form', 'Session', 'Asset.asset');
-    public $components = array(
-	'DebugKit.Toolbar'
-    );
 	var $isMobile = false;
 	var $view = 'Theme';
 	var $theme = 'h5bp';
@@ -23,6 +20,10 @@ class AppController extends Controller {
 			$this->theme = 'mobile';
 		}
 	}
+	
+	var $components = array(
+    	'DebugKit.Toolbar' => array('panels' => array('history' => false))
+	);	
 	/**
 	 * Want to use 
 	 * This is called by the paypal plugin after payment has been received

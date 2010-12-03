@@ -104,8 +104,6 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
     g.src = '//www.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g, s);
    })(document, 'script');
-  </script>
-  
-<?php echo $this->element('sql_dump'); ?>  
+  </script>  
 </body>
 </html>
