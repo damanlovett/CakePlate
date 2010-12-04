@@ -54,15 +54,15 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
 <body>
 
   <div id="container">
-    <header>
+    <header id="header">
 	<?php echo $this->element('header');?>
     </header>
     
-    <div id="main">
+    <div id="content">
 	<?php echo $content_for_layout ?>
     </div>
     
-    <footer>
+    <footer id="footer">
 	<?php echo $this->element('footer');?>
     </footer>
   </div> <!--! end of #container -->
