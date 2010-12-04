@@ -2,15 +2,13 @@
 //Make sure these are always added first to asset (before stuff in your views)
 $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'=>false));
 ?>
-<!doctype html>  
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!doctype html>   
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+  <?php echo $this->Html->charset(); ?>
   
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
@@ -60,6 +58,15 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
     
     <div id="main">
 	<?php echo $content_for_layout ?>
+	<ul class="simpleList">
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
     </div>
     
     <footer>

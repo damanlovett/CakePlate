@@ -8,7 +8,7 @@ $this->Html->script(array('mylibs/mobile','mylibs/plugins','mylibs/commonscript'
 <!doctype html>
 <html lang="en" class="no-js" manifest="default.manifest">
 <head>
-  <meta charset="utf-8">
+  <?php echo $this->Html->charset(); ?>
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
