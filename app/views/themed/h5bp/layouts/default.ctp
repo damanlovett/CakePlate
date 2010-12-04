@@ -112,7 +112,5 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
     s.parentNode.insertBefore(g, s);
    })(document, 'script');
   </script>
-  
-<?php echo $this->element('sql_dump'); ?>  
 </body>
 </html>
