@@ -3,16 +3,16 @@
 $this->Html->script(array('plugins','commonscript'),array('inline'=>false));
 ?>
 <!doctype html>
-<html lang="en" class="no-js">
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  
-  <!-- www.phpied.com/conditional-comments-block-downloads/ -->
-  <!--[if IE]><![endif]-->
+  <?php $this->Html->charset(); ?>  
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
   
   <title><?php echo $title_for_layout;?></title>
   <meta name="description" content="">
@@ -26,8 +26,7 @@ $this->Html->script(array('plugins','commonscript'),array('inline'=>false));
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
                 
   <?php   	  	
-	$this->Html->css(array('style','cake.generic','custom'),NULL,array('inline'=>false));		
-	echo $asset->scripts_for_layout('css');
+	$this->Html->css(array('style','cake.generic','custom'),NULL,array('inline'=>false));
 	
 	//Don't include handheld in asset because it needs media="handheld"
 	echo $this->Html->css(array('handheld'),null,array('media'=>'handheld'));	
@@ -36,18 +35,12 @@ $this->Html->script(array('plugins','commonscript'),array('inline'=>false));
 	echo $this->Html->css('http://fonts.googleapis.com/css?family=Lobster',NULL,array('inline'=>true));
   ?>
 
-<?php if (Configure::read() == 0) { ?>
+<?php if (Configure::read('debug') == 0) { ?>
 <meta http-equiv="Refresh" content="<?php echo $pause?>;url=<?php echo $url?>"/>
 <?php } ?>  
 </head>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-
-<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+<body>
 
   <div id="container">
     <header id="header">
@@ -69,25 +62,12 @@ $this->Html->script(array('plugins','commonscript'),array('inline'=>false));
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
- <!-- If you want to fallback, download jquery to your js dir -->
+  <!-- If you want to fallback, download jquery to your js dir -->
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.4.3.min.js"%3E%3C/script%3E'))</script>
-  
-  <!-- Optional: <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>-->  
-  <!-- Optional: <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>-->
-  
-<?php
-  	echo $asset->scripts_for_layout('js');
- ?>
 
   <!--[if lt IE 7 ]>
 	<?php echo $html->script('dd_belatedpng')?>
   <![endif]-->
-
-
-  <!-- yui profiler and profileviewer - remove for production -->
-  <?php echo $html->script('profiling/yahoo-profiling.min')?>
-  <?php echo $html->script('profiling/config')?>  
-  <!-- end profiling code -->
 
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
@@ -101,7 +81,7 @@ $this->Html->script(array('plugins','commonscript'),array('inline'=>false));
     g.src = '//www.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g, s);
    })(document, 'script');
-  </script>
-
+</script>
+  
 </body>
 </html>

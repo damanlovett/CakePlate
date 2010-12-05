@@ -1,7 +1,3 @@
-<?php
-//Make sure these are always added first to asset (before stuff in your views)
-$this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'=>false));
-?>
 <!doctype html>  
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
@@ -10,8 +6,7 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  
+  <?php $this->Html->charset(); ?>  
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
@@ -35,8 +30,7 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
   <link rel="apple-touch-icon" href="<?php echo $this->Html->url('/apple-touch-icon.png'); ?>">
                 
   <?php   	  	
-	$this->Html->css(array('style','cake.generic','custom'),NULL,array('inline'=>false));		
-	echo $asset->scripts_for_layout('css');
+	$this->Html->css(array('style','cake.generic','custom'),NULL,array('inline'=>false));	
 	
 	//Don't include handheld in asset because it needs media="handheld"
 	echo $this->Html->css(array('handheld'),null,array('media'=>'handheld'));	
@@ -74,24 +68,10 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
  <!-- If you want to fallback, download jquery to your js dir -->
   <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $this->Html->url('/js/libs/jquery-1.4.4.min.js'); ?>"%3E%3C/script%3E'))</script>
-  
-  <!-- Optional: <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>-->  
-  <!-- Optional: <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>-->
-  
-<?php
-  	echo $asset->scripts_for_layout('js');
- ?>
 
   <!--[if lt IE 7 ]>
-	<?php echo $html->script('libs/dd_belatedpng')?>
+	<?php echo $this->Html->script('libs/dd_belatedpng'); ?>
   <![endif]-->
-
-
-  <!-- yui profiler and profileviewer - remove for production -->
-  <?php echo $html->script('profiling/yahoo-profiling.min')?>
-  <?php echo $html->script('profiling/config')?>  
-  <!-- end profiling code -->
-
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
@@ -104,6 +84,7 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
     g.src = '//www.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g, s);
    })(document, 'script');
-  </script>  
+  </script>
+  
 </body>
 </html>

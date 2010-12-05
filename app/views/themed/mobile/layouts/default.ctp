@@ -1,20 +1,13 @@
-<?php
-
-// TODO : use mobile checking script to identify and redirect based on UA in app ctrlr
-
-//Make sure these are always added first to asset (before stuff in your views)
-$this->Html->script(array('mylibs/mobile','mylibs/plugins','mylibs/commonscript'),array('inline'=>false));
-?>
 <!doctype html>
 <html lang="en" class="no-js" manifest="default.manifest">
 <head>
-  <?php echo $this->Html->charset(); ?>
+  <?php echo $this->Html->charset(); ?>  
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 
-  <title><?php echo $title_for_layout;?> h5bp</title>
+  <title></title>
   <meta name="description" content="">
   <meta name="author" content="">
   
@@ -61,6 +54,7 @@ $this->Html->script(array('mylibs/mobile','mylibs/plugins','mylibs/commonscript'
   
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <?php echo $this->Html->script('libs/modernizr-1.6.min.js'); ?>
+
 </head>
 
 <body>
@@ -86,21 +80,14 @@ $this->Html->script(array('mylibs/mobile','mylibs/plugins','mylibs/commonscript'
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $this->Html->url('/js/libs/jquery-1.4.4.min.js'); ?>"%3E%3C/script%3E'))</script>
 
-  <script src="js/mobile.js?v=1"></script>
 <?php
-  	echo $asset->scripts_for_layout('js');
+    $this->AssetCompress->script(array('plugins','commonscript'));
+    echo $this->AssetCompress->includeJs();
  ?>
 
   <!--[if lt IE 7 ]>
-	<?php echo $html->script('libs/dd_belatedpng')?>
+	<?php echo $this->Html->script('libs/dd_belatedpng')?>
   <![endif]-->
-
-
-  <!-- yui profiler and profileviewer - remove for production -->
-  <?php echo $html->script('profiling/yahoo-profiling.min')?>
-  <?php echo $html->script('profiling/config')?>  
-  <!-- end profiling code -->
-
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->

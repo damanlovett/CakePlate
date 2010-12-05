@@ -1,6 +1,6 @@
 <?php
 //Make sure these are always added first to asset (before stuff in your views)
-$this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'=>false));
+//$this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'=>false));
 ?>
 <!doctype html>   
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
@@ -8,8 +8,7 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <?php echo $this->Html->charset(); ?>
-  
+  <?php echo $this->Html->charset(); ?>  
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
@@ -32,9 +31,10 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
   <link rel="shortcut icon" href="<?php echo $this->Html->url('/favicon.ico'); ?>">
   <link rel="apple-touch-icon" href="<?php echo $this->Html->url('/apple-touch-icon.png'); ?>">
                 
-  <?php   	  	
-	$this->Html->css(array('style', 'custom'),NULL,array('inline'=>false));		
-	echo $asset->scripts_for_layout('css');
+  <?php
+	$this->AssetCompress->css(array('style', 'custom'));
+	//$this->Html->css(array('style', 'custom'),NULL,array('inline'=>false));		
+	echo $this->AssetCompress->includeCss();
 	
 	//Don't include handheld in asset because it needs media="handheld"
 	echo $this->Html->css(array('handheld'),null,array('media'=>'handheld'));	
@@ -86,7 +86,8 @@ $this->Html->script(array('mylibs/plugins','mylibs/commonscript'),array('inline'
   <!-- Optional: <script src="http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>-->
   
 <?php
-  	echo $asset->scripts_for_layout('js');
+    $this->AssetCompress->script(array('plugins','commonscript'));
+    echo $this->AssetCompress->includeJs();
  ?>
 
   <!--[if lt IE 7 ]>

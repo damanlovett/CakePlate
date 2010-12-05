@@ -7,8 +7,28 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 class AppController extends Controller {
-
-	var $helpers = array('Html', 'Form', 'Session', 'Asset.asset');
+	public $helpers = array('Html', 'Form', 'Session', 'AssetCompress.AssetCompress');
+	// TODO : Auth & ACL another day
+	public $components = array( 
+		//'Auth', 
+		//'Acl', 
+		//'AclMenu', 
+		'Cookie', 
+		'RequestHandler', 
+		'Session', 
+		'DebugKit.Toolbar' => array(
+			'panels' => array(
+			  'history', 
+			  'session', 
+			  'request', 
+			  'sqlLog', 
+			  'timer', 
+			  'log', 
+			  'variables', 
+			  'Interactive.interactive', 
+			)
+		)
+	);
 	var $isMobile = false;
 	var $view = 'Theme';
 	var $theme = 'h5bp';
@@ -21,9 +41,6 @@ class AppController extends Controller {
 		}
 	}
 	
-	var $components = array(
-    	'DebugKit.Toolbar' => array('panels' => array('history' => false))
-	);	
 	/**
 	 * Want to use 
 	 * This is called by the paypal plugin after payment has been received
