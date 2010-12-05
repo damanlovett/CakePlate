@@ -58,15 +58,6 @@
     
     <div id="main">
 	<?php echo $content_for_layout ?>
-	<ul class="simpleList">
-		<li class="item"></li>
-		<li class="item"></li>
-		<li class="item"></li>
-		<li class="item"></li>
-		<li class="item"></li>
-		<li class="item"></li>
-		<li class="item"></li>
-	</ul>
     </div>
     
     <footer>
