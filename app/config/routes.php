@@ -32,10 +32,18 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	
+        /*   TODO : implement mine ideas here. Maybe!   */
 	Router::connect('/sitemap.xml', array('controller' => 'sitemaps', 'action' => 'sitemap'));
 	
 	/* Paypal IPN plugin */
 	//Note: if you enable this, view the app/plugins/paypal_ipn/README as there are some setup setps (like creating DB tables)
 	//Router::connect('/paypal_ipn/process', array('plugin' => 'paypal_ipn', 'controller' => 'instant_payment_notifications', 'action' => 'process'));
 	/* End Paypal IPN plugin */
-?>
+/**
+ * Asset Compress
+ */
+        Router::connect('/ccss/*', array('plugin' => 'asset_compress', 'controller' => 'css_files', 'action' => 'get'));
+        Router::connect('/cjs/*', array('plugin' => 'asset_compress', 'controller' => 'js_files', 'action' => 'get'));
+
+// does this neg affect asset comp?
+        Router::parseExtensions('json', 'xml'); 
