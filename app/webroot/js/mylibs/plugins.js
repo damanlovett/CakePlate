@@ -1,16 +1,12 @@
-
+// using with asset compress the scriplet filename is *NOT* camel cased
 // remap jQuery to $
 (function($){
 
- 
+//= require <hover_intent>
 
+//= require <toggle_fade>
 
-
-
-
- 
-
-
+//= require <placeholder>
 
 })(window.jQuery);
 
