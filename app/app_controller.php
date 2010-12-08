@@ -30,8 +30,8 @@ class AppController extends Controller {
 		)
 	);
 	var $isMobile = false;
-	var $view = 'Theme';
-	var $theme = 'h5bp';
+	//var $view = 'Theme';
+	//var $theme = 'h5bp';
 	
 	function beforeFilter() {
 		App::import('Vendor', 'mobile_device_detect', Array('file' => 'mobile_device_detect.php'));
