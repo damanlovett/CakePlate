@@ -30,7 +30,7 @@
   <link rel="apple-touch-icon" href="<?php echo $this->Html->url('/apple-touch-icon.png'); ?>">
                 
   <?php   	  	
-	$this->Html->css(array('style','cake.generic','custom'),NULL,array('inline'=>false));	
+	$this->Html->css(array('style'),NULL,array('inline'=>false));	
 	
 	//Don't include handheld in asset because it needs media="handheld"
 	echo $this->Html->css(array('handheld'),null,array('media'=>'handheld'));	

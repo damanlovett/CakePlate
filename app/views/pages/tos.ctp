@@ -1,0 +1,1 @@
+<h1>Terms of Service</h1><p>You hereby  accept the terms under which this service is provided by your action of loading pages from this site herein.  The koders of this site are not liable for linked content.</p>
