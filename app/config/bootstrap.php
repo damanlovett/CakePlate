@@ -48,3 +48,22 @@
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  *
  */
+
+// leave as false to not use GA but your mad set to site id to use boilerplate hotness eg: UA-XXXXX-X
+Configure::write('chromeEdge', false);
+
+// favicon and apple icon - uncomment and change the urls to what you want
+// Configure::write('faviconUrl', '/img/myicon.ico');
+// Configure::write('appleiconUrl', '/img/myapple-image.png');
+
+// use the hotness of Mark Story's Asset Compress provides sweet features
+Configure::write('assetCompress.css', true);
+Configure::write('assetCompress.js', true);
+
+// footer settings
+// class for fixing IE PNG Trans using Drew Diller's belated PNG Fix 
+Configure::write('ddpngFix', '.ddpng');
+// leave as false to not use GA but your mad set to site id to use boilerplate hotness eg: UA-XXXXX-X
+Configure::write('googleAnalytics', false);
+// use profiling or not
+Configure::write('yahooProfiling', false);
